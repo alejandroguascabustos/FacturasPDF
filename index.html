@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- insertamos el favicon, fuentes y estilos en los siguientes links-->
+    <link class="logo" rel="icon" type="image/png" href="Imagenes/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>Remisión de servicios</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+</head>
+<body>
+
+    <div id="contenedor-principal">
+        <div id="formulario-container">
+            <div class="contenedor-flex"> <!-- Contenedor principal que agrupa el formulario y la factura -->
+            
+                <!-- Sección del formulario -->
+                <div class="container" id="formulario-container">
+                    <div class="encabezado">
+                        <h1>REMISIÓN DE SERVICIO</h1>
+                        <img src="/4. Facturas en pdf/Img/logo.png" alt="logo">
+                    </div>
+                    <!-- Campo para el nombre del cliente -->
+                    <div>
+                        <label for="cliente">Nombre del Cliente:</label>
+                        <input type="text" id="cliente">
+                    </div>
+            
+                    <!-- Selección del tipo de servicio -->
+                    <div>
+                        <label for="tipodeservicio">Tipo de servicio</label>
+                        <select id="tipodeservicio">
+                            <option value="">Seleccione una opción</option>
+                            <option value="repuesto">Repuesto</option>
+                            <option value="servicio">Servicio</option>
+                        </select>
+                    </div>
+            
+                    <!-- Selección del tipo de bicicleta -->
+                    <div>
+                        <label for="tipobicicleta">Tipo de bicicletas</label>
+                        <select id="tipobicicleta">
+                            <option value="">Seleccione una opción</option>
+                            <option value="Montaña">Montaña</option>
+                            <option value="Ruta">Ruta</option>
+                            <option value="Fixed">Fixed</option>
+                            <option value="BMX">BMX</option>
+                            <option value="Electrica">Electrica</option>
+                            <option value="Sencilla">Sencilla</option>
+                        </select>
+                    </div>
+            
+                    <!-- Selección de la medida del rin -->
+                    <div>
+                        <label for="rin">Medida</label>
+                        <select id="rin">
+                            <option value="">Seleccione una opción</option>
+                            <option value="20">20</option>
+                            <option value="24">24</option>
+                            <option value="26">26</option>
+                            <option value="29">29</option>
+                            <option value="700">700</option>
+                        </select>
+                    </div>
+            
+                    <!-- Campos adicionales -->
+                    <div>
+                        <label for="telefono">Teléfono</label>
+                        <input type="number" id="telefono">
+                    </div>
+            
+                    <div>
+                        <label for="correo">Correo</label>
+                        <input type="email" id="correo">
+                    </div>
+            
+                    <div>
+                        <label for="fecha-hora">Fecha y hora de atención</label>
+                        <input type="datetime-local" id="fecha-hora">
+                    </div>
+            
+                    <!-- Área de comentarios -->
+                    <div>
+                        <label for="comentarios">Escribe detalles a tener en cuenta:</label>
+                        <textarea id="comentarios" rows="5" cols="40" placeholder="Escribe comentarios aquí..."></textarea>
+                    </div>
+            
+                    <!-- Campo para el valor a pagar -->
+                    <div>
+                        <label for="valor_pagar">Valor a pagar</label>
+                        <input type="number" id="valor_pagar" step="0.01" oninput="formatearValorPagar()">
+                    </div>
+            
+                    <!-- Botón que genera la factura -->
+                    <button onclick="generarFactura()">Generar Factura</button>
+                </div>
+            
+                <!-- Sección de la factura (inicialmente oculta) -->
+                <div id="factura-container" class="factura-oculta">
+                    <div id="factura"></div> <!-- Aquí se insertará la factura generada -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Agregamos el script de js -->
+    <script src="script.js"></script>
+
+</body>
+</html>
