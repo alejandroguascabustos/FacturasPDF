@@ -1,4 +1,4 @@
-# Facturador para bicicleta.
+# Facturador para Bicicleteria.
 
 Este proyecto aplica fundamentos de programación con JavaScript para capturar datos de un formulario y generar automáticamente una factura en formato PDF. Utiliza manipulación del DOM para obtener la información ingresada por el usuario y la biblioteca jsPDF para estructurar y exportar el documento. Es una solución sencilla y eficiente para gestionar facturación digital. 🚀
 Seguiremos aprendiendo más rapido.
